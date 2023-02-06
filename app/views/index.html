@@ -5,17 +5,48 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
 
-    
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
-    
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <h2 class="govuk-heading-l">
+        Sprint 1
+      </h2>
+      <ul class="govuk-list">
+
+        <li><a href="sprint-1/index" target="">Latest prototype for My apprenticeship </a></li>
+        <!-- <li><a href="sprint-52/apprentice/index" target="">Work in progress: My apprenticeship </a></li> -->
+      </ul>
+      <h2 class="govuk-heading-m">Accelerated Apprenticeships alpha</h2>
+      <ul class="govuk-list">
+        <li>
+          <a href="https://das-aan-prototype.herokuapp.com/apprentices/apprentices" target="_blank"
+            class="govuk-link">Apprentice awareness</a></li>
+            <li><a href="https://das-aan-prototype.herokuapp.com/employers/employers" target="_blank"
+            class="govuk-link">Employer awareness</a></li>
+            <li><a href="https://das-aan-prototype.herokuapp.com/" target="_blank" class="govuk-link">Awareness:
+            Apprenticeships.gov.uk</a></li>
+            <li><a href="https://www.gov.uk/government/publications/apprenticeships-recognition-of-prior-learning"
+            target="_blank" class="govuk-link">Awareness: GOV.UK guidance </a></li>
+            <li><br />
+          <a href="https://das-commitmentsstatement-proto.herokuapp.com/sprint-53/alpha-skill-scan/vacancy?skillscan=false" class="govuk-link">Accelerated Apprenticeships:
+            qualifications</a></li>
+            <li><a href="https://das-commitmentsstatement-proto.herokuapp.com/sprint-53/alpha-skill-scan/vacancy?skillscan=true" class="govuk-link">Accelerated Apprenticeships:
+            skill scan</a></li>
+            <li><a href="https://das-commitmentsstatement-proto.herokuapp.com/sprint-53/alpha-skill-scan/review-duties?skillscan=true" class="govuk-link">Accelerated
+            Apprenticeships: skill scan (duties)</a></li>
+            <li><a href="https://das-commitmentsstatement-proto.herokuapp.com/sprint-53/home" class="govuk-link">Accelerated Apprenticeships: edit RPL</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    </div>
   </div>
 </div>
-
 {% endblock %}

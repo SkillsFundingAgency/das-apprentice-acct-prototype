@@ -1,0 +1,108 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+My progress - {{serviceName}} - GOV.UK
+{% endblock %}
+
+{% set headerText="Chittur Gopalakrishnan Kaashi Vishwanathan" %}
+{% set knowledge_scores=[100, 100, 0, 0, 0, 1, 20] %}
+{% set skill_scores=[40, 100, 40, 0, 60, 0, 40] %}
+{% set behaviour_scores=[100, 40, 100, 60, 80, 80, 40] %}
+{% block beforeContent %}
+{% include "includes/account-header.html" %}
+{% include "includes/beta-phase-banner.html" %}
+{% include "includes/navigation-post-confirmation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container " id="landing-page-section">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">My progress
+        <span class="govuk-caption-m">Last updated 12 November 2022</span>
+      </h1>
+
+      <div class="">
+        <p>This shows your progress against the list of knowledge, skills and behaviours (KSBs) needed to complete this apprenticeship.</p>
+        <p><a
+            href="https://www.instituteforapprenticeships.org/apprenticeship-standards/construction-site-supervisor-v1-0"
+            class="govuk-link">View the full IFATE standard (opens in new tab)</a></p>
+      </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <!--             <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                show only recorded progress items
+              </label>
+            </div> -->
+          </div>
+        </fieldset>
+      </div>
+
+      <h2 class="govuk-heading-m">Knowledge</h2>
+      <table class="govuk-table data-tble">
+        <tbody class="govuk-table__body">
+          {% for knowledge in data.standards.knowledges %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <strong>K{{loop.index}}</strong>
+            </th>
+            <td class="govuk-table__cell">
+              {{knowledge.detail}}
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric width-one-fifth">
+              <span class="">{{ knowledge_scores[loop.index0] }}</span>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h2 class="govuk-heading-m">Skills</h2>
+      <table class="govuk-table data-tble">
+        <tbody class="govuk-table__body">
+          {% for skill in data.standards.skills %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <strong>S{{loop.index}}</strong>
+            </th>
+            <td class="govuk-table__cell">
+              {{skill.detail}}
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric width-one-fifth">
+              <span class="">{{ skill_scores[loop.index0] }}</span>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h2 class="govuk-heading-m">Behaviours</h2>
+      <table class="govuk-table data-tble">
+        <tbody class="govuk-table__body">
+          {% for behaviour in data.standards.behaviours %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <strong>B{{loop.index}}</strong>
+            </th>
+            <td class="govuk-table__cell">
+              {{behaviour.detail}}
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric width-one-fifth">
+              <span class="">{{ behaviour_scores[loop.index0] }}</span>
+            </td>
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -4,3 +4,28 @@
 // 
 
 // Add extra styles here
+@import "patterns/navigation";
+@import "patterns/primary_nav";
+
+.show-password-container {
+  display: inline;
+  position: relative;
+}
+.show-hide-checkbox {
+  display: none;
+}
+.show-password-control-container {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: -2px;
+}
+
+.govuk-label--show-hide {
+  cursor: pointer;
+  letter-spacing: -.2px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+}

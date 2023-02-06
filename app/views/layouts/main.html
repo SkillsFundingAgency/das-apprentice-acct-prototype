@@ -4,3 +4,14 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{# add main block without govuk-width-container in order to extend navbar to 100% width #}
+{# note this needs <div class="govuk-width-container"> in the template #}
+{% block main %}
+<div class="{{ containerClasses }}">
+  {% block beforeContent %}{% endblock %}
+  <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+    {% block content %}{% endblock %}
+  </main>
+</div>
+{% endblock %}
